@@ -259,4 +259,32 @@ Equivalent to UPDATE students SET age = 22 WHERE name = 'Devendra Pawar'
 1. Locate the document you want to remove. 
 2. Click the "Delete" (trash can) icon next to the document. 
 3. Confirm deletion. 
-Equivalent to DELETE FROM students WHERE name = 'Devendra Pawar' 
+Equivalent to DELETE FROM students WHERE name = 'Devendra Pawar'
+
+
+2--)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AngularJS Built-in Directives</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+</head>
+<body ng-app="demoApp" ng-controller="DemoController">
+    <h2>Welcome!</h2>
+    <input type="text" ng-model="name" placeholder="Enter your name" />
+    <p ng-bind="name"></p>
+
+    <button ng-click="show = !show">Toggle Message</button>
+    <p ng-show="show">Hello, {{ name || 'Guest' }}!</p>
+
+    <script>
+        angular.module("demoApp", [])
+        .controller("DemoController", function($scope) {
+            $scope.name = "";
+            $scope.show = true;
+        });
+    </script>
+
+</body>
+</html>
+
